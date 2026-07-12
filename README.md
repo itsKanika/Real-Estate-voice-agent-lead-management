@@ -55,17 +55,19 @@ Voice-Agent/
 
 #DEMO VEDIO
 
-https://github.com/user-attachments/assets/18955060-81b9-4246-8431-e8280ab1c902
+https://github.com/user-attachments/assets/249db035-0fea-4491-8ae9-39e74beb72b0
 
-<img width="842" height="520" alt="WhatsApp Image 2026-07-07 at 11 57 18 PM" src="https://github.com/user-attachments/assets/cbdee0f2-8e33-4ad9-8c84-5714cd47be04" />
 
-<img width="1440" height="547" alt="Screenshot 2026-06-01 at 2 24 46 AM" src="https://github.com/user-attachments/assets/824b4050-fc9a-4767-98b6-4e12d77ddb24" />
-<img width="2816" height="1536" alt="Gemini_Generated_Image_at64ztat64ztat64" src="https://github.com/user-attachments/assets/4601d39a-a2db-4559-ac7a-00c8d1818c26" />
-<img width="1439" height="807" alt="Screenshot 2026-07-13 at 2 32 16 AM" src="https://github.com/user-attachments/assets/d3b44a08-96d1-47dc-93b6-51f1df608af7" />
+<img width="1047" height="461" alt="Screenshot 2026-07-13 at 2 41 49 AM" src="https://github.com/user-attachments/assets/8e17d3c4-f7f3-402f-8c26-822d81b83375" />
 
-<img width="990" height="714" alt="Screenshot 2026-07-13 at 2 31 48 AM" src="https://github.com/user-attachments/assets/bc5483e3-b8fe-42ab-bb96-d1c95bbe12e2" />
+<img width="1047" height="529" alt="WhatsApp Image 2026-07-10 at 11 43 11 PM (1)" src="https://github.com/user-attachments/assets/a30aae2a-ba70-4888-ac4f-10b1898b1867" />
 
-<img width="1206" height="779" alt="Screenshot 2026-07-13 at 2 31 29 AM" src="https://github.com/user-attachments/assets/3e939b3a-8390-4c5a-a5ea-bde42d2f157f" />
+<img width="2316" height="1536" alt="Gemini_Generated_Image_at64ztat64ztat64" src="https://github.com/user-attachments/assets/4601d39a-a2db-4559-ac7a-00c8d1818c26" />
+<img width="1339" height="807" alt="Screenshot 2026-07-13 at 2 32 16 AM" src="https://github.com/user-attachments/assets/d3b44a08-96d1-47dc-93b6-51f1df608af7" />
+
+<img width="1339" height="714" alt="Screenshot 2026-07-13 at 2 31 48 AM" src="https://github.com/user-attachments/assets/bc5483e3-b8fe-42ab-bb96-d1c95bbe12e2" />
+
+<img width="1339" height="779" alt="Screenshot 2026-07-13 at 2 31 29 AM" src="https://github.com/user-attachments/assets/3e939b3a-8390-4c5a-a5ea-bde42d2f157f" />
 
 
 
@@ -196,6 +198,7 @@ Restart the server after updating the URL.
 8. Call data is stored in PostgreSQL.
 9. Power BI reads the stored data and displays interactive dashboards.
 
+
 ---
 
 # ❗ Problem Statement
@@ -238,6 +241,7 @@ Instead of waiting for a human agent, customers interact directly with the AI as
 6. Webhooks send this data to the backend.
 7. Express.js stores it in PostgreSQL.
 8. Power BI visualizes the data through dashboards.
+<img width="2816" height="1536" alt="Gemini_Generated_Image_cwna6dcwna6dcwna" src="https://github.com/user-attachments/assets/8587b96e-0ca8-4f55-afe3-be965319ae45" />
 
 ---
 
