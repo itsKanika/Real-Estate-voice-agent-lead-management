@@ -95,6 +95,25 @@ npm install
 
 Create a `.env` file.
 
+Example:
+
+```env
+RETELL_API_KEY=your_retell_api_key
+
+RETELL_AGENT_ID=your_agent_id
+
+RETELL_AGENT_VERSION=your_agent_version
+
+TWILIO_FROM_NUMBER=+14155550100
+
+VERIFY_RETELL=true
+
+PUBLIC_BASE_URL=https://your-ngrok-url.ngrok-free.app
+
+DATABASE_URL=postgresql://username:password@localhost:5432/database_name
+```
+
+---
 ---
 
 # 🚀 Running the Project
