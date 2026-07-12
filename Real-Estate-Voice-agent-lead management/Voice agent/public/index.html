@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Trial Caller</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">Retell + Twilio outbound trial</p>
+        <h1>Real Estate Lead Voice Agent</h1>
+      </div>
+      <div class="status-strip" id="configStatus"></div>
+    </header>
+
+    <main class="shell">
+      <section class="panel trigger-panel">
+        <div class="section-head">
+          <h2>Trigger Call</h2>
+          <span class="pill">Free trial ready</span>
+        </div>
+
+        <form id="callForm" class="call-form">
+          <label>
+            Homeowner phone
+            <input name="to_number" placeholder="+14155550123" autocomplete="tel" required />
+          </label>
+          <label>
+            Owner name
+            <input name="owner_name" placeholder="Sarah" autocomplete="given-name" required />
+          </label>
+          <label class="wide">
+            Property address
+            <input name="property_address" placeholder="123 Maple Street, Austin, TX" required />
+          </label>
+          <label>
+            Lead source
+            <input name="lead_source" value="our website enquiry form" required />
+          </label>
+          <label>
+            Agent name
+            <input name="agent_name" value="Alex" required />
+          </label>
+          <button type="submit" id="submitBtn">
+            <span>Call homeowner</span>
+          </button>
+        </form>
+
+        <p class="form-note" id="formNote">
+          Retell will place the call from your imported Twilio number. On a Twilio free trial,
+          the destination number must be verified in Twilio.
+        </p>
+      </section>
+
+      <section class="metrics">
+        <div class="metric">
+          <span>Total calls</span>
+          <strong id="metricTotal">0</strong>
+        </div>
+        <div class="metric">
+          <span>Qualified rate</span>
+          <strong id="metricQualified">0%</strong>
+        </div>
+        <div class="metric">
+          <span>Positive sentiment</span>
+          <strong id="metricSentiment">0</strong>
+        </div>
+        <div class="metric">
+          <span>Tool calls</span>
+          <strong id="metricTools">0</strong>
+        </div>
+      </section>
+
+      <section class="workspace">
+        <aside class="panel calls-panel">
+          <div class="section-head">
+            <h2>Calls</h2>
+            <button class="ghost" id="refreshBtn" type="button">Refresh</button>
+          </div>
+          <div id="callList" class="call-list"></div>
+        </aside>
+
+        <section class="panel detail-panel">
+          <div class="section-head">
+            <h2 id="detailTitle">Call detail</h2>
+            <div class="detail-actions">
+              <span class="pill muted" id="detailStatus">No call selected</span>
+              <button class="danger hidden" id="deleteCallBtn" type="button">Delete</button>
+            </div>
+          </div>
+
+          <div id="emptyState" class="empty-state">
+            Select a call after triggering it. Transcript updates appear when Retell sends
+            `transcript_updated`, `call_ended`, or `call_analyzed` webhooks.
+          </div>
+
+          <div id="detailBody" class="detail-body hidden">
+            <div class="info-grid" id="infoGrid"></div>
+
+            <div class="tabs">
+              <button class="tab active" data-tab="transcript">Transcript</button>
+              <button class="tab" data-tab="analysis">Analysis</button>
+              <button class="tab" data-tab="tools">Tools</button>
+              <button class="tab" data-tab="setup">Setup</button>
+            </div>
+
+            <div class="tab-panel" id="tab-transcript"></div>
+            <div class="tab-panel hidden" id="tab-analysis"></div>
+            <div class="tab-panel hidden" id="tab-tools"></div>
+            <div class="tab-panel hidden" id="tab-setup"></div>
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <script src="app.js" type="module"></script>
+  </body>
+</html>
