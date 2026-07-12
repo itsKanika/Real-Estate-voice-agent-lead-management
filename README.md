@@ -1,6 +1,6 @@
 # Real-Estate-voice-agent-lead-management🏡
 
-An AI-powered **Real Estate Voice Agent** that automates customer calls using **Voice agen** **Node.js**, **Express.js**, **PostgreSQL**, **Power BI**, and **ngrok**.
+An AI-powered **Real Estate Voice Agent** that automates customer calls using **Voice agent** **Node.js**, **Express.js**, **PostgreSQL**, **Power BI**, and **ngrok**.
 
 The system answers customer calls, conducts natural conversations, captures customer requirements, stores call information in PostgreSQL, and visualizes insights through Power BI dashboards.
 
