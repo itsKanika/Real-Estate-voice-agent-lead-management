@@ -1,197 +1,338 @@
+# Real-Estate-voice-agent-lead-management🏡
+
+An AI-powered **Real Estate Voice Agent** that automates customer calls using **Voice agent** **Node.js**, **Express.js**, **PostgreSQL**, **Power BI**, and **ngrok**.
+
+The system answers customer calls, conducts natural conversations, captures customer requirements, stores call information in PostgreSQL, and visualizes insights through Power BI dashboards.
+
+---
+
+# 📌 Features
+
+- 📞 AI-powered real estate voice conversations
+- 🤖 Human-like call experience using Retell AI
+- 📝 Automatic call transcription
+- 🎙️ Call recording generation
+- 📊 AI-generated call summaries
+- 🏠 Lead qualification
+- 💾 PostgreSQL database integration
+- 🔗 Webhook support
+- 📈 Power BI dashboard for analytics
+- 🌐 Public webhook support using ngrok
+
+---
+
+# 🛠 Tech Stack
+
+| Technology | Purpose |
+|------------|---------|
+| Retell AI | AI Voice Conversations |
+| Node.js | Backend Runtime |
+| Express.js | REST APIs & Webhooks |
+| PostgreSQL | Database |
+| Power BI | Analytics Dashboard |
+| ngrok | Public URL for Webhooks |
+
+---
+
+# 📁 Project Structure
+
+```
+Voice-Agent/
+│
+├── src/
+│   ├── server.js
+│   ├── routes/
+│   ├── controllers/
+│   ├── database/
+│   └── webhook/
+│
+├── .env
+├── package.json
+└── README.md
+```
+
+---
+
+#DEMO VEDIO
+
+https://github.com/user-attachments/assets/249db035-0fea-4491-8ae9-39e74beb72b0
+
+
+<img width="1047" height="461" alt="Screenshot 2026-07-13 at 2 41 49 AM" src="https://github.com/user-attachments/assets/8e17d3c4-f7f3-402f-8c26-822d81b83375" />
+
+<img width="1047" height="529" alt="WhatsApp Image 2026-07-10 at 11 43 11 PM (1)" src="https://github.com/user-attachments/assets/a30aae2a-ba70-4888-ac4f-10b1898b1867" />
+
+<img width="2316" height="1536" alt="Gemini_Generated_Image_at64ztat64ztat64" src="https://github.com/user-attachments/assets/4601d39a-a2db-4559-ac7a-00c8d1818c26" />
+<img width="1339" height="807" alt="Screenshot 2026-07-13 at 2 32 16 AM" src="https://github.com/user-attachments/assets/d3b44a08-96d1-47dc-93b6-51f1df608af7" />
+
+<img width="1339" height="714" alt="Screenshot 2026-07-13 at 2 31 48 AM" src="https://github.com/user-attachments/assets/bc5483e3-b8fe-42ab-bb96-d1c95bbe12e2" />
+
+<img width="1339" height="779" alt="Screenshot 2026-07-13 at 2 31 29 AM" src="https://github.com/user-attachments/assets/3e939b3a-8390-4c5a-a5ea-bde42d2f157f" />
 
 
 
-<img width="1440" height="547" alt="Screenshot 2026-06-01 at 2 24 46 AM" src="https://github.com/user-attachments/assets/824b4050-fc9a-4767-98b6-4e12d77ddb24" />
-
-<img width="1600" height="956" alt="WhatsApp Image 2026-06-01 at 02 02 46" src="https://github.com/user-attachments/assets/5418118b-2b70-4c97-9a67-72e19ddd6fdc" />
-<img width="1224" height="675" alt="Screenshot 2026-06-01 at 2 09 18 AM" src="https://github.com/user-attachments/assets/79784b69-38f5-4681-8e87-9ac4a188fb2f" />
-
-Retell + Twilio Trial Caller
-
-Small trial app for outbound real estate lead qualification calls.
 
 
-The browser triggers a call, the server calls Retell's Create Phone Call API, Retell uses your imported/bound Twilio number, and Retell webhooks/tool calls update the dashboard with transcript, analysis, and property estimate data.
-<img width="1536" height="1024" alt="ai" src="https://github.com/user-attachments/assets/e28f7ce0-8548-492e-951d-39fd8c0e7f23" />
+# ⚙️ Installation
 
-Demo 
-
-
-https://github.com/user-attachments/assets/180c8fd6-ae8a-45a5-8962-de207b4f6217
-
-
-
-## What is included
-
-- Frontend dashboard to trigger calls and view call history.
-- Backend endpoint to create outbound Retell phone calls.
-- Retell webhook endpoint with HMAC signature verification.
-- Retell custom function endpoint: `get_property_estimate`.
-- Local JSON storage in `data/calls.json` for trial use.
-- Human-style real estate agent prompt you can paste into Retell.
-
-## Requirements
-
-- Node.js 18+
-- Retell API key
-- Twilio trial number imported/bound in Retell
-- Verified destination number in Twilio if you are on a Twilio free trial
-- `ngrok` or another public tunnel for Retell webhooks while running locally
-
-## Run locally
+## 1. Clone the Repository
 
 ```bash
-cp .env.example .env
+git clone <repository-url>
+
+cd Voice-Agent
+```
+
+---
+
+## 2. Install Dependencies
+
+```bash
+npm install
+```
+
+---
+
+## 3. Configure Environment Variables
+
+Create a `.env` file.
+
+Example:
+
+```env
+RETELL_API_KEY=your_retell_api_key
+
+RETELL_AGENT_ID=your_agent_id
+
+RETELL_AGENT_VERSION=your_agent_version
+
+TWILIO_FROM_NUMBER=+14155550100
+
+VERIFY_RETELL=true
+
+PUBLIC_BASE_URL=https://your-ngrok-url.ngrok-free.app
+
+DATABASE_URL=postgresql://username:password@localhost:5432/database_name
+```
+
+---
+---
+
+# 🚀 Running the Project
+
+Start the backend server:
+
+```bash
 npm start
 ```
 
-Open:
-
-```text
-http://localhost:3000
-```
-
-No `npm install` is required because this app uses only built-in Node modules.
-
-## Environment
-
-Edit `.env`:
+or
 
 ```bash
-RETELL_API_KEY=key_xxx
-TWILIO_FROM_NUMBER=+14155550100
-RETELL_AGENT_ID=agent_xxx
-RETELL_AGENT_VERSION=
-PUBLIC_BASE_URL=https://your-ngrok-url.ngrok-free.app
-PORT=3000
-VERIFY_RETELL_SIGNATURE=true
+npm run dev
 ```
 
-`TWILIO_FROM_NUMBER` must be the Twilio number after it is imported or configured in Retell. The app does not call Twilio directly because the voice agent runs inside Retell; Retell places the outbound call using the configured telephony number.
+---
 
-## Retell setup
+# 🌐 ngrok Setup
 
-1. Create a Retell voice agent.
-2. Bind your Twilio/imported phone number as the outbound number for that agent.
-3. Add these dynamic variables in the prompt:
+Since Retell AI needs access to your local webhook, expose your local server using **ngrok**.
 
-```text
-{{owner_name}}
-{{property_address}}
-{{lead_source}}
-{{agent_name}}
+## Step 1
+
+Authenticate ngrok
+
+```bash
+ngrok config add-authtoken YOUR_NGROK_AUTH_TOKEN
 ```
 
-4. Set webhook URL:
+You only need to do this once.
 
-```text
-{PUBLIC_BASE_URL}/api/webhooks/retell
+---
+
+## Step 2
+
+Expose your local server
+
+```bash
+ngrok http 3000
 ```
 
-5. Subscribe to these events:
+Example output:
 
-```text
-call_started
-transcript_updated
-call_ended
-call_analyzed
+```
+Forwarding
+
+https://abc123.ngrok-free.app
 ```
 
-6. Add a custom function:
+Copy the HTTPS URL.
 
-```text
-Name: get_property_estimate
-Method: POST
-URL: {PUBLIC_BASE_URL}/api/tools/property-estimate
+---
+
+## Step 3
+
+Update your `.env`
+
+```env
+PUBLIC_BASE_URL=https://abc123.ngrok-free.app
 ```
 
-Schema:
+Restart the server after updating the URL.
 
-```json
-{
-  "type": "object",
-  "required": ["property_address"],
-  "properties": {
-    "property_address": {
-      "type": "string",
-      "description": "The homeowner property address being discussed."
-    },
-    "call_id": {
-      "type": "string",
-      "description": "The Retell call id if available."
-    }
-  }
-}
-```
+---
 
-7. Add post-call analysis fields in Retell:
+# 📞 How It Works
 
-```text
-qualified: enum yes, no, maybe
-sell_timeline: enum asap, 3_to_6_months, 6_to_12_months, just_exploring
-motivation: string
-objections: string
-follow_up_required: boolean
-call_sentiment: enum positive, neutral, negative
-key_points: string or list of strings
-```
+1. Customer calls the business number.
+2. Retell AI answers the call.
+3. AI conducts a natural conversation.
+4. Customer shares property requirements.
+5. Retell AI generates:
+   - Transcript
+   - Recording
+   - AI Summary
+   - Call Insights
+6. Retell AI sends data to the backend through webhooks.
+7. Express.js processes the webhook.
+8. Call data is stored in PostgreSQL.
+9. Power BI reads the stored data and displays interactive dashboards.
 
-## Agent prompt
 
-Paste this into the Retell agent prompt and tune voice settings for your preferred voice:
+---
 
-```text
-You are {{agent_name}}, a warm real estate assistant calling homeowners for a short, natural lead qualification conversation.
+# ❗ Problem Statement
 
-You are calling {{owner_name}} about {{property_address}}. The lead came from {{lead_source}}.
+In the real estate industry, customers often call to inquire about properties, pricing, site visits, or other details. However, many businesses face challenges such as:
 
-Your job is to understand whether the homeowner is considering selling and whether a human real estate agent should follow up. Do not sound like you are reading a script. Keep turns short, use natural pauses, and acknowledge interruptions gracefully.
+- Calls being missed when agents are busy or unavailable.
+- Long waiting times for customers.
+- Manual note-taking during conversations.
+- Important customer information getting lost.
+- Difficulty in reviewing past conversations and identifying customer requirements.
 
-Opening:
-Start with: "Hi {{owner_name}}, this is {{agent_name}}. I know this is out of the blue, but I’m reaching out about {{property_address}}. Did I catch you at an okay time?"
+These issues reduce customer satisfaction and make lead management inefficient.
 
-Conversation style:
-- Be friendly, calm, and concise.
-- Use light filler naturally: "yeah", "got it", "that makes sense", "let me think for a second".
-- Ask one question at a time.
-- If the homeowner interrupts, stop and respond to what they said.
-- If they are busy, offer a quick callback.
-- If they are not interested, politely thank them and end the call.
-- Never pressure them.
+---
 
-Qualify naturally:
-- Are they considering selling?
-- What timeline are they thinking: ASAP, 3 to 6 months, 6 to 12 months, or just exploring?
-- Why might they sell?
-- What is the property condition?
-- Do they have a mortgage or any payoff concerns?
-- Have they spoken with other agents?
+# 💡 Our Solution
 
-Property estimate tool:
-Once the homeowner confirms the property or asks about value, call get_property_estimate with property_address. Use the result conversationally, for example: "Based on recent comparable sales nearby, homes like yours are landing around..."
+To solve this problem, we developed an **AI-powered Voice Agent** that answers incoming customer calls automatically.
 
-Close:
-If qualified or maybe qualified, ask permission to schedule a callback with a human local agent. Confirm the best time. If not qualified, end warmly.
-```
+Instead of waiting for a human agent, customers interact directly with the AI assistant. The AI understands customer requirements, asks follow-up questions, provides relevant responses, and automatically records every interaction.
 
-## API routes
+---
 
-- `POST /api/calls` creates an outbound Retell call.
-- `GET /api/calls` lists stored calls.
-- `GET /api/calls/:id` returns one call.
-- `POST /api/webhooks/retell` receives Retell webhook events.
-- `POST /api/tools/property-estimate` returns mock property estimate data.
+# 🔄 Workflow
 
-## Notes for trial
+1. Customer calls the real estate business.
+2. Retell AI answers the call.
+3. AI asks questions such as:
+   - What type of property are you looking for?
+   - Which location are you interested in?
+   - What is your budget?
+   - Are you buying or renting?
+4. The conversation continues naturally.
+5. After the call ends, Retell AI generates:
+   - Call transcript
+   - Call recording
+   - AI-generated summary
+   - Key insights
+6. Webhooks send this data to the backend.
+7. Express.js stores it in PostgreSQL.
+8. Power BI visualizes the data through dashboards.
+<img width="2816" height="1536" alt="Gemini_Generated_Image_cwna6dcwna6dcwna" src="https://github.com/user-attachments/assets/8587b96e-0ca8-4f55-afe3-be965319ae45" />
 
-- Twilio free trial accounts can call only verified destination numbers.
-- Retell requires a public HTTPS URL for webhooks and custom tools; use `ngrok http 3000`.
-- For quick local endpoint testing before Retell is connected, set `VERIFY_RETELL_SIGNATURE=false`. Turn it back on for real Retell traffic.
+---
 
-## References
+# 📊 Insights Generated
 
-- Retell Create Phone Call API: https://docs.retellai.com/api-references/create-phone-call
-- Retell outbound calls: https://docs.retellai.com/deploy/outbound-call
-- Retell dynamic variables: https://docs.retellai.com/build/dynamic-variables
-- Retell webhooks and signature verification: https://docs.retellai.com/features/webhook-overview
-- Retell custom functions: https://docs.retellai.com/build/conversation-flow/custom-function
+The system automatically extracts valuable information including:
+
+- Customer Name
+- Phone Number
+- Property Preference
+- Preferred Location
+- Budget
+- Buying or Renting Intent
+- Level of Interest
+- Questions Asked
+- Conversation Summary
+- Call Duration
+- Recording URL
+- Transcript
+- Call Outcome
+
+---
+
+# 📈 Power BI Dashboard
+
+Power BI provides interactive dashboards to visualize:
+
+- Total Calls
+- Qualified Leads
+- Buying vs Renting Ratio
+- Customer Budget Distribution
+- Popular Property Locations
+- Average Call Duration
+- Call Volume Trends
+- Lead Conversion Metrics
+
+---
+
+# 🚀 Technologies Used
+
+- Retell AI
+- Node.js
+- Express.js
+- PostgreSQL
+- REST APIs
+- Webhooks
+- Power BI
+- ngrok
+
+---
+
+# ✅ Benefits
+
+- 24×7 AI Call Handling
+- No Missed Customer Calls
+- Human-like Conversations
+- Automatic Transcripts
+- Automatic Call Recordings
+- AI-generated Insights
+- Faster Lead Qualification
+- Better Customer Relationship Management
+- Reduced Manual Work
+- Data-driven Decision Making with Power BI
+
+---
+
+# 📌 Future Enhancements
+
+- SMS & Email Notifications
+- CRM Integration
+- Multi-language Support
+- Appointment Scheduling
+- WhatsApp Integration
+- Live Agent Handoff
+- Sentiment Analysis
+- Advanced Analytics Dashboard
+
+---
+
+# 👨‍💻 Author
+
+**Kanika Gupta**
+
+---
+
+# 📄 License
+
+This project is intended for educational and demonstration purposes.
+
+---
+
+## Thank You ❤️
+
+This AI Voice Agent acts as a virtual real estate assistant that answers customer calls, understands customer requirements, stores conversations securely, and provides actionable insights through Power BI dashboards. It helps real estate businesses improve customer service, streamline lead management, and make data-driven decisions.
